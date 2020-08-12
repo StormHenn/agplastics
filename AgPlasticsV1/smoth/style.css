@@ -32,7 +32,7 @@
 /*----------------------------------------*/
 /* google-font */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700,900');
-html, body {height: 100%;}
+html, body {height: 100%; scroll-behavior: smooth;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -369,9 +369,6 @@ font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   line-height: 40px;
 }
-.header-icon {
-  margin-top: 5px;
-}
 .header-search {
   margin-left: 12px;
   position: relative;
@@ -444,7 +441,17 @@ font-family: 'Open Sans', sans-serif;
 /* main-menu-area */
 .main-menu-area{}
 .logo {
-  margin-top: 30px;
+    padding: 0px 10px 10px 10px;
+    width: 225px;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-radius: 0 0 7px 7px;
+    box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.3);
+}
+.logo img {
+    padding-top: 10px;
 }
 .main-menu{}
 .main-menu ul{}
@@ -464,7 +471,7 @@ font-family: 'Open Sans', sans-serif;
 }
 .main-menu ul li:last-child a{padding-right:0;} 
 .main-menu ul li:hover > a, .main-menu ul li.active > a {
-  color: #3452ff;
+  color: #d00606;
 }
 .main-menu ul li a i {
   margin-left: 3px;
@@ -538,13 +545,13 @@ font-family: 'Open Sans', sans-serif;
   transition: all 0.3s ease 0s;
 }
 .slider-text a.active {
-  background: #3452ff none repeat scroll 0 0;
-  border-color: #3452ff;
+  background: #a21818 none repeat scroll 0 0;
+  border-color: #da0808;
   color: #ffffff;
 }
-.slider-text a.active:hover{background:#333333;border-color:#333333;}
+.slider-text a.active:hover{background:#c54747;border-color:#c54747;}
 .slider-active .owl-nav div {
-  background: #3452ff none repeat scroll 0 0;
+  background: #a21818 none repeat scroll 0 0;
   border-radius: 50%;
   color: #ffffff;
   font-size: 37px;
@@ -612,7 +619,7 @@ font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
 }
 .section-title h2::before {
-  background: #3452ff;
+  background: #d00606;
   bottom: 0;
   content: "";
   height: 1px;
@@ -999,7 +1006,8 @@ label {
   text-transform: capitalize;
 }
 .btn {
-  background: #3452FF;
+  background: #a21818;
+  border-color: #da0808;
   border-radius: 0;
   color: hsl(0, 0%, 100%);
   display: inline-block;
@@ -1010,7 +1018,7 @@ label {
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
 }
-.btn:hover{background:#3112FF;color:#fff;}
+.btn:hover{background:#c54747;color:#fff;border-color:#c54747;}
 .contact-bottom-text::before {
   background: #27d4e0 none repeat scroll 0 0;
   bottom: 0;
