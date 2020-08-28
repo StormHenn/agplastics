@@ -1,7 +1,5 @@
 (function ($) {
 "use strict";
-
-
 $('.main-menu nav > ul > li').slice(-2).addClass('last-elements');
 
 /* meanmenu */
@@ -90,6 +88,4 @@ $('.brand-active').owlCarousel({
         }
     }
 })
-
-
 })(jQuery);	

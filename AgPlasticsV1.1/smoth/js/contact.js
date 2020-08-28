@@ -1,48 +1,58 @@
-$(function() {
-
-	// Get the form.
-	var form = $('#contact-form');
-
-	// Get the messages div.
-	var formMessages = $('.form-message');
-
-	// Set up an event listener for the contact form.
-	$(form).submit(function(e) {
-		// Stop the browser from submitting the form.
-		e.preventDefault();
-
-		// Serialize the form data.
-		var formData = $(form).serialize();
-
-		// Submit the form using AJAX.
-		$.ajax({
-			type: 'POST',
-			url: $(form).attr('action'),
-			data: formData
-		})
-		.done(function(response) {
-			// Make sure that the formMessages div has the 'success' class.
-			$(formMessages).removeClass('error');
-			$(formMessages).addClass('success');
-
-			// Set the message text.
-			$(formMessages).text(response);
-
-			// Clear the form.
-			$('#contact-form input,#contact-form textarea').val('');
-		})
-		.fail(function(data) {
-			// Make sure that the formMessages div has the 'error' class.
-			$(formMessages).removeClass('success');
-			$(formMessages).addClass('error');
-
-			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text('Oops! An error occured and your message could not be sent.');
-			}
-		});
-	});
-
-});
+function displayResponse(state, message) {
+    let messageBlock = document.querySelector('.response_layer');
+    
+    if (state === "sending") {
+        messageBlock.style.display = "block";
+        messageBlock.innerHTML = '<img src="../img/ajax-loader.gif" alt="ajax loader">';
+    } else if (state === "success") {
+        messageBlock.classList.add('success', 'animate__animated', 'animate__fadeInUp');
+        messageBlock.innerHTML = message;
+        setTimeout(function () {
+            messageBlock.classList.remove('success', 'animate__animated', 'animate__fadeInUp');
+            messageBlock.innerHTML = '';
+        }, 5000);
+    } else if (state === "failed") {
+        messageBlock.classList.add('error', 'animate__animated', 'animate__fadeInUp');
+        messageBlock.innerHTML = message;
+        setTimeout(function () {
+            messageBlock.classList.remove('error', 'animate__animated', 'animate__fadeInUp');
+            messageBlock.innerHTML = '';
+        }, 5000);
+    }
+}
+jQuery(document).ready(function ($) {
+    submitForm = function () {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+        
+        if ((name !== "" && name.length > 1) && (email !== "" && email.length > 1) && (subject !== "" && subject.length > 1) && (message !== "" && message.length > 1)) {
+            displayResponse('sending', '');
+            $.ajax({
+                url: "../mail.php",
+                data: {
+                    'name': name,
+                    'email': email,
+                    'message': message,
+                    'subject': subject,
+                    'submit': ''
+                },
+                dataType: 'json',
+                type: 'POST',
+                async: true,
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                    displayResponse("failed", "Shits done hit the fan")
+                }
+            })
+        } else {
+            displayResponse("failed", "Please fill out the fields to submit the form");
+        }
+    } 
+})

@@ -1034,7 +1034,6 @@ label {
   margin-bottom: 20px;
   padding: 7px 10px;
   width: 100%;
-  text-transform: capitalize;
 }
 #contact-form textarea {
   border: 2px solid #eee;
@@ -1043,7 +1042,6 @@ label {
   padding: 10px;
   width: 100%;
   font-size: 14px;
-  text-transform: capitalize;
 }
 .btn {
   background: #a21818;
@@ -1084,6 +1082,35 @@ label {
   font-size: 17px;
   font-weight: 400;
   margin-bottom: 0;
+}
+.response_layer {
+    text-align: center;
+}
+.response_layer img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+.response_layer.success {
+    display: block;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.response_layer.error {
+    display: block;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 /* 11. blog-area */
 .blog-widget {

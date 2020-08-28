@@ -1,14 +1,18 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Smoth | Corporate HTML Template</title>
+    <title>AG Plastics | Injection Moulding</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="favicon.ico" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- all css here -->
@@ -18,6 +22,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/meanmenu.css" />
+    <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -433,87 +438,31 @@
                 </div>
             </div>
             <div class="row">
-                    <div class="col-md-6">
-                        <div class="contact-form-container">
-                            <form id="contact-form" action="mail.php" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <input type="text" placeholder="Name" name="name">
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input type="email" placeholder="Email" name="email">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="text" placeholder="Subject" name="subject">
-                                        <textarea id="message" placeholder="Message*" rows="6" cols="30" name="message"></textarea>
-                                    </div>
-                                    <div class="col-md-12 text-center">
-                                        <button class="btn send-mail-btn" type="submit">Send Email</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                 <div class="col-md-6">
-                    <div class="map-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.446267228744!2d18.60570201574671!3d-33.929648429652005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5a987758af71%3A0xbb718b0488878751!2s12%20Parin%20Rd%2C%20Parow%20Industrial%2C%20Cape%20Town%2C%207493!5e0!3m2!1sen!2sza!4v1597341599143!5m2!1sen!2sza"
-                            width="100%" height="350px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                    <div class="contact-form-container">
+                        <div class="response_layer"></div>
+                        <form id="contact-form" action="mail.php" method="post">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <input type="text" placeholder="Name" name="name" id="name" value="Jared">
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <input type="email" placeholder="Email" name="email" id="email" value="something@email.com">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Subject" name="subject" id="subject" value="this is a subject">
+                                    <textarea id="message" placeholder="Message*" rows="6" cols="30" name="message" id="message">this is a message</textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button class="btn send-mail-btn" type="submit" name="submit">Send Email</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-         
-            </div>
-            
-          
-        </div>
-    </div>
-    <!-- our-brand-area-start -->
-    <div class="our-brand-area ptb-80">
-        <div class="container">
-            <div class="row">
-                <div class="brand-active owl-carousel">
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/1.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/2.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/3.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/4.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/5.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="single-brand">
-                            <div class="brand-img">
-                                <img src="img/brand/6.png" alt="" />
-                            </div>
-                        </div>
+                <div class="col-md-6">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.446267228744!2d18.60570201574671!3d-33.929648429652005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5a987758af71%3A0xbb718b0488878751!2s12%20Parin%20Rd%2C%20Parow%20Industrial%2C%20Cape%20Town%2C%207493!5e0!3m2!1sen!2sza!4v1597341599143!5m2!1sen!2sza" width="100%" height="350px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -531,13 +480,13 @@
                                 <ul class="list-unstyled contact">
                                     <li>
                                         <p>
-                                            <strong><i class="fa fa-map-marker"></i> </strong> 
+                                            <strong><i class="fa fa-map-marker"></i> </strong>
                                             12 Parin Rd, Parow Industrial, Cape Town, 7493
                                         </p>
                                     </li>
                                     <li>
                                         <p>
-                                            <strong><i class="fa fa-envelope"></i></strong> 
+                                            <strong><i class="fa fa-envelope"></i></strong>
                                             <a href="andy@agplasticks.co.za">andy@agplasticks.co.za</a>
                                         </p>
                                     </li>
@@ -549,8 +498,8 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <strong><i class="fa fa-fax"></i> </strong> 
-                                            <a href="fax:0219325952">+27 21 932 5952</a>    
+                                            <strong><i class="fa fa-fax"></i> </strong>
+                                            <a href="fax:0219325952">+27 21 932 5952</a>
                                         </p>
                                     </li>
                                 </ul>
@@ -596,6 +545,7 @@
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/plugins.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
 </body>
 
