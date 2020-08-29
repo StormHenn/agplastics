@@ -1051,16 +1051,42 @@ label {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
+  word-wrap: break-word !important;
   letter-spacing: 2px;
   padding: 15px 30px;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
 }
+.btn:hover, 
+.btn.focus, 
+.btn:focus {
+    background:#c54747;
+    color:#fff;
+    border-color:#c54747;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-danger.focus, 
+.btn-danger:focus {
+    color: #fff;
+    background-color: #c9302c;
+    border-color: #761c19;
+}
 .send-mail-btn {
     width: 100%;
     display: block;
 }
-.btn:hover{background:#c54747;color:#fff;border-color:#c54747;}
+.send-mail-btn img {
+    max-width: 50px;
+}
+@media(max-width: 360px) {
+    .send-mail-btn {
+        font-size: 9px;
+    }
+}
 .contact-bottom-text::before {
   background: #27d4e0 none repeat scroll 0 0;
   bottom: 0;
@@ -1090,27 +1116,11 @@ label {
     max-width: 50px;
     margin-bottom: 10px;
 }
-.response_layer.success {
-    display: block;
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+.swal2-content {
+    font-size: 16px;
 }
-.response_layer.error {
-    display: block;
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+.swal2-title {
+    font-size: 25px
 }
 /* 11. blog-area */
 .blog-widget {

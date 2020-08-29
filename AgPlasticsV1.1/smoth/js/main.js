@@ -47,45 +47,4 @@ $('.video-popup').magnificPopup({
   type: 'iframe'
 });
 
-/* testimonial-active */
-$('.testimonial-active').owlCarousel({
-    loop:true,
-    nav:false,
-	autoplay:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
-
-
-/* brand-active */
-$('.brand-active').owlCarousel({
-    loop:true,
-    nav:false,
-	dots:false,
-	autoplay:false,
-	navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-    responsive:{
-        0:{
-            items:2
-        },
-        45:{
-            items:3
-        },
-        768:{
-            items:4
-        },
-        1000:{
-            items:6
-        }
-    }
-})
 })(jQuery);	

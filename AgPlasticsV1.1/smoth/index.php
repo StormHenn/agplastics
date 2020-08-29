@@ -1,6 +1,7 @@
 <?php
-ob_start();
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -13,9 +14,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="icon" href="favicon.ico" />
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- all css here -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/pe-icon-7-stroke.css" />
@@ -23,7 +21,7 @@ session_start();
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/meanmenu.css" />
     <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -37,8 +35,6 @@ session_start();
       </p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <!-- header start -->
     <header>
         <div class="header-top-area black-bg hidden-xs">
             <div class="container">
@@ -47,18 +43,17 @@ session_start();
                         <ul class="top-right">
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                <span>andy@agplastics.co.za</span>
+                                <a href="mailto:andy@agplastics.co.za">andy@agplastics.co.za</a>
                             </li>
                             <li>
                                 <i class="fa fa-phone"></i>
-                                <span>+27 83 634 4783</span>
+                                <a href="tel:+27836344783">+27 83 634 4783</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- main-menu-area-start -->
         <div class="main-menu-area">
             <div class="container">
                 <div class="row header-strip">
@@ -72,7 +67,6 @@ session_start();
                             <nav>
                                 <ul>
                                     <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="#services">About Us</a></li>
                                     <li><a href="#services">Services</a></li>
                                     <li><a href="#portfolio">Gallery</a></li>
                                     <li><a href="#contact">Contact Us</a></li>
@@ -84,10 +78,8 @@ session_start();
                 </div>
             </div>
         </div>
-        <!-- main-menu-area-end -->
     </header>
-    <!-- header end -->
-    <!-- slider-area-start -->
+
     <div class="slider-area">
         <div class="slider-active owl-carousel">
             <div class="single-slider ptb-150 bg-opacity" style="background-image:url(img/slider/5.png)">
@@ -143,8 +135,7 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- slider-area-end -->
-    <!-- service-area-start -->
+
     <div class="service-area pt-80" id="services">
         <div class="container">
             <div class="row">
@@ -251,9 +242,7 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- service-area-end -->
 
-    <!-- portfolio-area-start -->
     <div class="portfolio-area pt-100 pb-70" id="portfolio">
         <div class="container">
             <div class="row">
@@ -387,7 +376,6 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- portfolio-area-end -->
 
     <div class="service-area pt-80 pb-30" id="contact">
         <div class="container">
@@ -439,22 +427,22 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-md-6">
+                    <div class="response_layer"></div>
                     <div class="contact-form-container">
-                        <div class="response_layer"></div>
-                        <form id="contact-form" action="mail.php" method="post">
+                        <form id="contact-form" method="post">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
-                                    <input type="text" placeholder="Name" name="name" id="name" value="Jared">
+                                    <input type="text" placeholder="Name" name="name" id="name">
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <input type="email" placeholder="Email" name="email" id="email" value="something@email.com">
+                                    <input type="email" placeholder="Email" name="email" id="email">
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Subject" name="subject" id="subject" value="this is a subject">
-                                    <textarea id="message" placeholder="Message*" rows="6" cols="30" name="message" id="message">this is a message</textarea>
+                                    <input type="text" placeholder="Subject" name="subject" id="subject">
+                                    <textarea id="message" placeholder="Message*" rows="6" cols="30" id="message"></textarea>
                                 </div>
                                 <div class="col-md-12 text-center">
-                                    <button class="btn send-mail-btn" type="submit" name="submit">Send Email</button>
+                                    <button class="btn send-mail-btn" type="button" onclick="submitForm()">Send Email</button>
                                 </div>
                             </div>
                         </form>
@@ -468,8 +456,6 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- our-brand-area-end -->
-    <!-- footer start -->
     <footer>
         <div class="footer-area black-bg ptb-80">
             <div class="container">
@@ -506,9 +492,10 @@ session_start();
                             </div>
                         </div>
                         <div class="footer-address">
-                            <p>We are a constantly growing company that believes in the importance of working in partnership with our clients to
-                                foster
-                                a close working relationship.</p>
+                            <p>
+                                We are a constantly growing company that believes in the importance of working in partnership with our clients to
+                                foster a close working relationship.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-7 col-md-offset-2 footer-logo">
@@ -525,7 +512,7 @@ session_start();
                     <a href="#"><i class="fa fa-linkedin"></i></a>
                 </div>
                 <div class="copyright text-center">
-                    <p>Smoth template - All rights reserved - 2018 © Made by</p>
+                    <p>All rights reserved - 2018 © Made by</p>
                     <a href="#">ThemePure</a>
                 </div>
                 <div class="copyright text-center">
@@ -534,15 +521,15 @@ session_start();
             </div>
         </div>
     </footer>
-    <!-- footer end -->
-    <!-- all js here -->
+
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
     <script src="js/jquery.meanmenu.js"></script>
     <script src="js/jquery.mixitup.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/contact.js"></script>
